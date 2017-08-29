@@ -13,6 +13,49 @@
 // limitations under the License.
 
 using System;
+using System.Linq;
+using NUnit.Framework;
+using Xamarin.UITest;
+using Xamarin.UITest.Queries;
+using System.Collections.Generic;
+
+namespace Sensus.XTC.UiTests
+{
+    [TestFixture]
+    public class Tests
+    {
+        #region Fields
+        private IApp _app;
+        //private string _labelClass;
+        #endregion
+
+        #region Setup
+        [SetUp]
+        public void TestFixtureSetUp()
+        {
+#if __ANDROID__
+            _app = ConfigureApp.Android.StartApp();
+            _labelClass = "FormsTextView";
+#elif __IOS__
+            _app = ConfigureApp.iOS.StartApp();
+            //_labelClass = "UILabel";
+#endif
+        }
+        #endregion
+
+        [Test]
+        public void TestProtocol()
+        {
+            //_app.Repl();
+        }
+    }
+}
+
+
+
+
+
+/*using System;
 using Xamarin.UITest;
 using NUnit.Framework;
 using System.Linq;
@@ -69,6 +112,9 @@ namespace Sensus.XTC.UiTests
         [Test]
         public void RunProtocol()
         {
+
+            Thread.Sleep(5000);
+
             // wait a bit for app to start up -- ios sometimes displays permissions dialogs that need time to be dismissed (UiTest appears to take care of these on its own)
             Thread.Sleep(5000);
                 
@@ -110,7 +156,6 @@ namespace Sensus.XTC.UiTests
             _app.Back();  // to probes page
             _app.Back();  // to protocol page
             _app.Back();  // to protocols page
-
             StopProtocol();
         }
 
@@ -172,4 +217,4 @@ namespace Sensus.XTC.UiTests
             _app.WaitForElementThenTap(PROTOCOL_STOP_CONFIRM, false);
         }
     }
-}
+}*/

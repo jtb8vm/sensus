@@ -20,13 +20,12 @@ namespace Sensus.XTC.UiTests
 {
     public class iOSTests : Tests
     {
-        protected override IApp GetApp()
+        protected IApp GetApp()
         {
-            // simulator configs
             return ConfigureApp.iOS.StartApp();
         }
 
-        protected override Func<AppQuery, AppQuery> GetStatusLinesQuery()
+        protected Func<AppQuery, AppQuery> GetStatusLinesQuery()
         {
             return c => c.Class("UITableViewLabel");
         }

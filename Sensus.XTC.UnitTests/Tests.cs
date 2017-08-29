@@ -19,6 +19,8 @@ using Xamarin.UITest;
 using Xamarin.UITest.Queries;
 using System.Collections.Generic;
 
+//TODO: change this namespace to match project name?
+
 namespace Sensus.Tests.Cloud
 {
     [TestFixture]
@@ -30,7 +32,7 @@ namespace Sensus.Tests.Cloud
         #endregion
 
         #region Setup
-        [TestFixtureSetUp]
+        [SetUp]
         public void TestFixtureSetUp()
         {
 #if __ANDROID__

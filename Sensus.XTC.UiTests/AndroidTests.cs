@@ -20,12 +20,12 @@ namespace Sensus.XTC.UiTests
 {
     public class AndroidTests : Tests
     {
-        protected override IApp GetApp()
+        protected IApp GetApp()
         {
             return ConfigureApp.Android.StartApp();
         }
 
-        protected override Func<AppQuery, AppQuery> GetStatusLinesQuery()
+        protected Func<AppQuery, AppQuery> GetStatusLinesQuery()
         {
             return c => c.Class("TextCellRenderer_TextCellView").Class("TextView");
         }

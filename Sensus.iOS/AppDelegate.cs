@@ -167,6 +167,7 @@ namespace Sensus.iOS
                 await (SensusContext.Current.CallbackScheduler as IiOSCallbackScheduler).UpdateCallbacksAsync();
 
 #if ENABLE_TEST_CLOUD
+                //TODO: put this back after UiTestingProtocol defined
                     // load and run the UI testing protocol
                     string filePath = NSBundle.MainBundle.PathForResource("UiTestingProtocol", "json");
                     using (Stream file = new FileStream(filePath, FileMode.Open, FileAccess.Read))
